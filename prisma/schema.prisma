@@ -1,0 +1,43 @@
+// schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("POSTGRES_PRISMA_URL") // Make sure to set this in your .env file
+}
+
+model Jadwal {
+  id         Int      @id @default(autoincrement())
+  tanggal    DateTime
+  jam_mulai  DateTime
+  jam_selesai DateTime
+  bookings   Booking[]
+}
+
+model Pasien {
+  id            Int      @id @default(autoincrement())
+  nama          String
+  nomor_telepon String
+  alamat        String
+  bookings      Booking[]
+}
+
+model Status {
+  id   Int      @id @default(autoincrement())
+  nama String
+  bookings Booking[]
+}
+
+model Booking {
+  id        Int      @id @default(autoincrement())
+  id_jadwal Int
+  id_pasien Int
+  id_status Int
+
+  jadwal    Jadwal @relation(fields: [id_jadwal], references: [id])
+  pasien    Pasien @relation(fields: [id_pasien], references: [id])
+  status    Status @relation(fields: [id_status], references: [id])
+}

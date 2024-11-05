@@ -2,12 +2,12 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <>
-      <footer className="relative bg-blueGray-200 pt-8 pb-6">
-        <div
-          className="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20 h-20"
-          style={{ transform: "translateZ(0)" }}
-        >
+    <div className="flex flex-col min-h-screen">
+      <div className="flex-grow">
+        {/* Main content goes here */}
+      </div>
+      <footer className="bg-blueGray-200 pt-8 pb-6">
+        <div className="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20 h-20">
           <svg
             className="absolute bottom-0 overflow-hidden"
             xmlns="http://www.w3.org/2000/svg"
@@ -157,6 +157,6 @@ export default function Footer() {
           </div>
         </div>
       </footer>
-    </>
+    </div>
   );
 }

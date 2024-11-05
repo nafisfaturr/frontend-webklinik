@@ -1,7 +1,12 @@
 {
   "/_app": "pages/_app.js",
-  "/_document": "pages/_document.js",
   "/_error": "pages/_error.js",
-  "/admin/tables": "pages/admin/tables.js",
-  "/404": "pages/404.js"
+  "/_document": "pages/_document.js",
+  "/admin/booking": "pages/admin/booking.js",
+  "/api/pasien": "pages/api/pasien.js",
+  "/api/jadwal": "pages/api/jadwal.js",
+  "/api/status": "pages/api/status.js",
+  "/admin/booking/[id]": "pages/admin/booking/[id].js",
+  "/api/booking": "pages/api/booking.js",
+  "/api/booking/show/[id]": "pages/api/booking/show/[id].js"
 }
