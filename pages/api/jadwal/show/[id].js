@@ -40,18 +40,27 @@ export default async function handler(req, res) {
             // Validate required fields
             const { tanggal, jam_mulai, jam_selesai } = data; // Example fields for Jadwal
             if (!tanggal || !jam_mulai || !jam_selesai) {
-                return res.status(400).json({ error: 'All fields are required' });
+            return res.status(400).json({ error: 'All fields are required' });
+            }
+
+            // Combine tanggal with jam_mulai and jam_selesai to form valid Date objects
+            const startDateTime = new Date(`${tanggal}T${jam_mulai}`);
+            const endDateTime = new Date(`${tanggal}T${jam_selesai}`);
+
+            // Check if dates are valid
+            if (isNaN(startDateTime) || isNaN(endDateTime)) {
+            return res.status(400).json({ error: 'Invalid date or time format' });
             }
 
             // Update the jadwal by ID
             const updatedJadwal = await prisma.jadwal.update({
-                where: { id: Number(id) }, // Convert id to number if necessary
-                data: {
-                    tanggal: new Date(tanggal), // Convert to Date object
-                    jam_mulai: new Date(jam_mulai), // Convert to Date object
-                    jam_selesai: new Date(jam_selesai), // Convert to Date object
-                    // Add any other fields that can be updated
-                },
+            where: { id: Number(id) }, // Convert id to number if necessary
+            data: {
+                tanggal: new Date(tanggal), // Convert tanggal to Date object
+                jam_mulai: startDateTime,   // Use combined Date for jam_mulai
+                jam_selesai: endDateTime,   // Use combined Date for jam_selesai
+                // Add any other fields that can be updated
+            },
             });
 
             return res.status(200).json(updatedJadwal);

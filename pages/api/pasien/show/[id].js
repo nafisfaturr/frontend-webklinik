@@ -42,21 +42,31 @@ export default async function handler(req, res) {
         }
     } else if (method === 'POST') {
         try {
-            const { nama, nomor_telepon, alamat } = req.body; // Get data from request body
+            const { id, nama, nomor_telepon, alamat } = req.body; 
 
-            if (!nama || !nomor_telepon || !alamat) {
-                return res.status(400).json({ error: 'All fields are required' });
+            if (!id || !nama || !nomor_telepon || !alamat) {
+                return res.status(400).json({ error: 'All fields (id, nama, nomor_telepon, alamat) are required' });
             }
 
-            const newPasien = await prisma.pasien.create({
+            const pasienExists = await prisma.pasien.findUnique({
+                where: { id: id },
+            });
+        
+            if (!pasienExists) {
+                return res.status(404).json({ error: 'Patient not found' });
+            }
+        
+            // Update the existing patient record
+            const updatedPasien = await prisma.pasien.update({
+                where: { id: id },
                 data: {
                     nama,
                     nomor_telepon,
                     alamat,
                 },
             });
-
-            return res.status(201).json(newPasien);
+        
+            return res.status(200).json(updatedPasien);
         } catch (error) {
             console.error('Error creating Pasien:', error);
             return res.status(500).json({ error: 'Internal Server Error' });

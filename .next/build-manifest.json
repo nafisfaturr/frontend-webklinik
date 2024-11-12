@@ -32,15 +32,15 @@
       "static/chunks/main.js",
       "static/chunks/pages/admin/booking.js"
     ],
-    "/admin/booking/[id]": [
+    "/admin/jadwal": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/admin/booking/[id].js"
+      "static/chunks/pages/admin/jadwal.js"
     ],
-    "/admin/booking/add": [
+    "/admin/status": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/admin/booking/add.js"
+      "static/chunks/pages/admin/status.js"
     ]
   },
   "ampFirstPages": []

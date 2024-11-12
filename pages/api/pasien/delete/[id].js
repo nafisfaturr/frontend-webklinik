@@ -7,33 +7,44 @@ const corsHeaders = {
     'Access-Control-Allow-Headers': 'Content-Type',
 };
 
-// Handler for DELETE request to delete a pasien by ID
-export async function deletePasien(req, res) {
-    // Handle CORS preflight request
+// Main handler function
+export default async function handler(req, res) {
+    // Handle OPTIONS request for CORS preflight
     if (req.method === 'OPTIONS') {
-        res.writeHead(204, corsHeaders);
-        return res.end();
+        res.setHeader('Access-Control-Allow-Origin', '*');
+        res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+        res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+        return res.status(200).end();
     }
 
     try {
-        const { id } = req.params; // Assuming the ID is passed as a URL parameter
+        if (req.method === 'POST') {
+            const { id } = req.query; // Assuming the ID is passed in the request body
 
-        const deletedPasien = await prisma.pasien.delete({
-            where: { id: Number(id) }, // Convert id to number if necessary
-        });
+            // Check if ID is provided
+            if (!id) {
+                return res.status(400).json({ error: 'ID is required' });
+            }
 
-        res.set(corsHeaders);
-        return res.status(200).json({ message: 'Pasien deleted successfully', deletedPasien });
+            // Delete the Pasien by ID
+            const deletedPasien = await prisma.pasien.delete({
+                where: { id: Number(id) }, // Convert id to number if necessary
+            });
+
+            res.status(200).json({ message: 'Pasien deleted successfully', deletedPasien });
+        } else {
+            // Handle unsupported request methods
+            res.setHeader('Allow', ['POST']);
+            res.status(405).end(`Method ${req.method} Not Allowed`);
+        }
     } catch (error) {
         console.error('Error deleting Pasien:', error);
-
+        
         if (error.code === 'P2025') {
-            res.set(corsHeaders);
             return res.status(404).json({ error: 'Pasien not found' });
         }
 
-        res.set(corsHeaders);
-        return res.status(500).json({ error: 'Internal Server Error' });
+        res.status(500).json({ error: 'Internal Server Error' });
     } finally {
         await prisma.$disconnect();
     }

@@ -42,7 +42,7 @@ export default async function handler(req, res) {
         // POST request to edit a status by ID
         else if (method === 'POST') {
             const { id } = req.query; // Using req.query to extract ID from query parameters
-            const data = await req.json();
+            const data = await req.body;
 
             // Validate required fields for status
             const { nama } = data;

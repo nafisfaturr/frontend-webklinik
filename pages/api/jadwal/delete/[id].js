@@ -19,7 +19,7 @@ export default async function handler(req, res) {
 
     try {
         if (req.method === 'POST') {
-            const { id } = req.body; // Assuming the ID is passed in the request body
+            const { id } = req.query; // Assuming the ID is passed in the request body
 
             // Check if ID is provided
             if (!id) {

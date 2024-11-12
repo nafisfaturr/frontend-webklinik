@@ -31,7 +31,7 @@ export default async function handler(req, res) {
             return res.status(200).json(statusList);
         } else if (method === 'POST') {
             // Handler for POST request to create a new status
-            const data = await req.json();
+            const data = await req.body;
 
             // Validate required fields
             const { nama } = data;

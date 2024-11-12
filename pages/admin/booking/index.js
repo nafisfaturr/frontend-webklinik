@@ -28,6 +28,29 @@ export default function Booking() {
         fetchData();
     }, []);
 
+    const handleDelete = async (id) => {
+        const confirmed = window.confirm("Are you sure you want to delete this booking?");
+        if (confirmed) {
+            try {
+                const response = await fetch(`/api/booking/delete/${id}`, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                });
+
+                if (!response.ok) {
+                    throw new Error("Failed to delete the booking");
+                }
+
+                // Update the UI after successful deletion
+                setData(prevData => prevData.filter(item => item.id !== id));
+            } catch (error) {
+                setError(error);
+            }
+        }
+    };
+
     if (loading) return <div>Loading...</div>;
     if (error) return <div>Error: {error.message}</div>;
 
@@ -88,6 +111,9 @@ export default function Booking() {
                                         <th className="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100">
                                             Edit
                                         </th>
+                                        <th className="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100">
+                                            Delete
+                                        </th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -113,6 +139,14 @@ export default function Booking() {
                                                 >
                                                     Edit
                                                 </a>
+                                            </td>
+                                            <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                                <button
+                                                    onClick={() => handleDelete(item.id)}
+                                                    className="bg-red-500 text-white font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none"
+                                                >
+                                                    Delete
+                                                </button>
                                             </td>
                                         </tr>
                                     ))}

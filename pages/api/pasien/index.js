@@ -15,7 +15,7 @@ export default async function handler(req, res) {
         }
     } else if (req.method === 'POST') {
         try {
-            const data = await req.json();
+            const data = await req.body;
 
             const { nama, nomor_telepon, alamat } = data; // Fields for patient creation
             if (!nama || !nomor_telepon || !alamat) {
@@ -25,7 +25,7 @@ export default async function handler(req, res) {
             const newPasien = await prisma.pasien.create({
                 data: {
                     nama,
-                    nomor_telepon,
+                    nomor_telepon: nomor_telepon,
                     alamat,
                 },
             });

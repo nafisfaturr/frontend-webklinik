@@ -23,7 +23,7 @@ export default async function handler(req, res) {
             const jadwalList = await prisma.jadwal.findMany();
             res.status(200).json(jadwalList);
         } else if (req.method === 'POST') {
-            // Handler for POST request to insert a new jadwal
+           // Handler for POST request to insert a new jadwal
             const data = req.body; // Assuming body-parser middleware is used
 
             // Validate required fields
@@ -32,12 +32,26 @@ export default async function handler(req, res) {
                 return res.status(400).json({ error: 'All fields are required' });
             }
 
-            // Ensure the date and time fields are in the correct format
+            // Convert tanggal to a Date object
+            const date = new Date(tanggal);
+            if (isNaN(date.getTime())) {
+                return res.status(400).json({ error: 'Invalid date format for tanggal' });
+            }
+
+            // Combine tanggal with jam_mulai and jam_selesai times
+            const startTime = new Date(`${tanggal}T${jam_mulai}:00`);
+            const endTime = new Date(`${tanggal}T${jam_selesai}:00`);
+
+            if (isNaN(startTime.getTime()) || isNaN(endTime.getTime())) {
+                return res.status(400).json({ error: 'Invalid time format for jam_mulai or jam_selesai' });
+            }
+
+            // Create a new jadwal entry
             const newJadwal = await prisma.jadwal.create({
                 data: {
-                    tanggal: new Date(tanggal), // Convert to Date object
-                    jam_mulai: new Date(jam_mulai), // Convert to Date object
-                    jam_selesai: new Date(jam_selesai), // Convert to Date object
+                    tanggal: date,
+                    jam_mulai: startTime,
+                    jam_selesai: endTime,
                     // Add any other necessary fields here
                 },
             });
