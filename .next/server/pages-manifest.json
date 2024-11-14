@@ -2,12 +2,5 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/admin/jadwal": "pages/admin/jadwal.js",
-  "/admin/status": "pages/admin/status.js",
-  "/admin/booking": "pages/admin/booking.js",
-  "/api/booking": "pages/api/booking.js",
-  "/api/pasien": "pages/api/pasien.js",
-  "/": "pages/index.js",
-  "/api/jadwal": "pages/api/jadwal.js",
-  "/api/status": "pages/api/status.js"
+  "/": "pages/index.js"
 }
