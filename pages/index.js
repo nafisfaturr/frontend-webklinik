@@ -4,6 +4,10 @@ import Link from "next/link";
 
 import IndexNavbar from "components/Navbars/IndexNavbar.js";
 import Footer from "components/Footers/Footer.js";
+import dynamic from 'next/dynamic';
+const GoogleMapComponent = dynamic(() => import('../components/GoogleMapComponent'), {
+  ssr: false,
+});
 
 export default function Index() {
   return (
@@ -166,108 +170,30 @@ export default function Index() {
           </div>
 
           <div className="flex flex-wrap items-center pt-32">
-            <div className="w-full md:w-6/12 px-4 mr-auto ml-auto mt-32">
-              <div className="justify-center flex flex-wrap relative">
-                <div className="my-4 w-full lg:w-6/12 px-4">
-                  <a
-                    href="https://www.creative-tim.com/learning-lab/tailwind/svelte/alerts/notus?ref=vtw-index"
-                    target="_blank"
-                  >
-                    <div className="bg-red-600 shadow-lg rounded-lg text-center p-8">
-                      <img
-                        alt="..."
-                        className="shadow-md rounded-full max-w-full w-16 mx-auto p-2 bg-white"
-                        src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/svelte.jpg"
-                      />
-                      <p className="text-lg text-white mt-4 font-semibold">
-                        Svelte
-                      </p>
-                    </div>
-                  </a>
-                  <a
-                    href="https://www.creative-tim.com/learning-lab/tailwind/react/alerts/notus?ref=vtw-index"
-                    target="_blank"
-                  >
-                    <div className="bg-lightBlue-500 shadow-lg rounded-lg text-center p-8 mt-8">
-                      <img
-                        alt="..."
-                        className="shadow-md rounded-full max-w-full w-16 mx-auto p-2 bg-white"
-                        src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/react.jpg"
-                      />
-                      <p className="text-lg text-white mt-4 font-semibold">
-                        ReactJS
-                      </p>
-                    </div>
-                  </a>
-                  <a
-                    href="https://www.creative-tim.com/learning-lab/tailwind/nextjs/alerts/notus?ref=vtw-index"
-                    target="_blank"
-                  >
-                    <div className="bg-blueGray-700 shadow-lg rounded-lg text-center p-8 mt-8">
-                      <img
-                        alt="..."
-                        className="shadow-md rounded-full max-w-full w-16 mx-auto p-2 bg-white"
-                        src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/nextjs.jpg"
-                      />
-                      <p className="text-lg text-white mt-4 font-semibold">
-                        NextJS
-                      </p>
-                    </div>
-                  </a>
+          <div className="w-full md:w-6/12 px-4 mr-auto ml-auto mt-32">
+            <div className="flex justify-center">
+              <div className="max-w-xs rounded-lg overflow-hidden shadow-lg mr-1">
+                <img className="w-full h-64 object-cover p-3" src="/img/Rectangle 280.png" alt="Dr. Susilawati"/>
+                <div className="p-4">
+                  <p className="text-center font-bold text-lg">dr. Susilawati</p>
+                  <p className="text-center text-gray-600">Dokter</p>
                 </div>
-                <div className="my-4 w-full lg:w-6/12 px-4 lg:mt-16">
-                  <a
-                    href="https://www.creative-tim.com/learning-lab/tailwind/js/alerts/notus?ref=vtw-index"
-                    target="_blank"
-                  >
-                    <div className="bg-yellow-500 shadow-lg rounded-lg text-center p-8">
-                      <img
-                        alt="..."
-                        className="shadow-md rounded-full max-w-full w-16 mx-auto p-2 bg-white"
-                        src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/js.png"
-                      />
-                      <p className="text-lg text-white mt-4 font-semibold">
-                        JavaScript
-                      </p>
-                    </div>
-                  </a>
-                  <a
-                    href="https://www.creative-tim.com/learning-lab/tailwind/angular/alerts/notus?ref=vtw-index"
-                    target="_blank"
-                  >
-                    <div className="bg-red-700 shadow-lg rounded-lg text-center p-8 mt-8">
-                      <img
-                        alt="..."
-                        className="shadow-md rounded-full max-w-full w-16 mx-auto p-2 bg-white"
-                        src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/angular.jpg"
-                      />
-                      <p className="text-lg text-white mt-4 font-semibold">
-                        Angular
-                      </p>
-                    </div>
-                  </a>
-                  <a
-                    href="https://www.creative-tim.com/learning-lab/tailwind/vue/alerts/notus?ref=vtw-index"
-                    target="_blank"
-                  >
-                    <div className="bg-emerald-500 shadow-lg rounded-lg text-center p-8 mt-8">
-                      <img
-                        alt="..."
-                        className="shadow-md rounded-full max-w-full w-16 mx-auto p-2 bg-white"
-                        src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/vue.jpg"
-                      />
-                      <p className="text-lg text-white mt-4 font-semibold">
-                        Vue.js
-                      </p>
-                    </div>
-                  </a>
+              </div>
+              <div className="max-w-xs rounded-lg overflow-hidden shadow-lg ml-1">
+                <img className="w-full h-64 object-cover" src="/img/Rectangle 281.png" alt="Nurul"/>
+                <div className="p-4">
+                  <p className="text-center font-bold text-lg">Nurul ........</p>
+                  <p className="text-center text-gray-600">Asisten Dokter</p>
                 </div>
               </div>
             </div>
+          </div>
 
-            <div className="w-full md:w-4/12 px-12 md:px-4 ml-auto mr-auto mt-48">
-              <div className="text-blueGray-500 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-white">
-                <i className="fas fa-drafting-compass text-xl"></i>
+
+
+            <div className="w-full md:w-4/12 px-12 md:px-4 ml-auto mr-auto mt-48 text-right">
+              <div className="text-blueGray-500 text-center inline-flex items-center justify-center w-16 h-16 mb-5 shadow-lg rounded-full bg-white">
+                <img src="/img/ic.svg"/>
               </div>
               <h3 className="text-3xl mb-2 font-semibold leading-normal">
                 Tim Medis
@@ -342,12 +268,12 @@ export default function Index() {
 
 
       <section className="py-20 bg-blueGray-600 overflow-hidden">
-        <div className="justify-center text-center flex flex-wrap mt-24">
-          <div className="w-full md:w-6/12 px-12 md:px-4">
-            <h2 className="font-semibold text-4xl text-white">Alamat</h2>
-          </div>
+        <h2 className="font-semibold text-4xl text-white text-center">Alamat</h2>
+        <div className="flex justify-center mt-10 p-8 rounded-lg">
+          <GoogleMapComponent />
         </div>
       </section>
+
       <Footer />
     </>
   );
