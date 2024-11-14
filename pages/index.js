@@ -203,14 +203,6 @@ export default function Index() {
                 berdedikasi, tim medis kami siap memberikan perawatan
                 terbaik untuk kesehatan dan kenyamanan gigi Anda.
               </p>
-              <a
-                href="https://www.creative-tim.com/learning-lab/tailwind/nextjs/alerts/notus?ref=nnjs-index"
-                target="_blank"
-                className="font-bold text-blueGray-700 hover:text-blueGray-500 ease-linear transition-all duration-150"
-              >
-                View all{" "}
-                <i className="fa fa-angle-double-right ml-1 leading-relaxed"></i>
-              </a>
             </div>
           </div>
         </div>
