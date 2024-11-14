@@ -4,6 +4,10 @@ import Link from "next/link";
 
 import IndexNavbar from "components/Navbars/IndexNavbar.js";
 import Footer from "components/Footers/Footer.js";
+import dynamic from 'next/dynamic';
+const GoogleMapComponent = dynamic(() => import('../components/GoogleMapComponent'), {
+  ssr: false,
+});
 
 export default function Index() {
   return (
@@ -166,20 +170,20 @@ export default function Index() {
           </div>
 
           <div className="flex flex-wrap items-center pt-32">
-          <div class="w-full md:w-6/12 px-4 mr-auto ml-auto mt-32">
-            <div class="flex justify-center">
-              <div class="max-w-xs rounded-lg overflow-hidden shadow-lg mr-1">
-                <img class="w-full h-64 object-cover" src="/img/Rectangle 280.png" alt="Dr. Susilawati" className="p-3"/>
-                <div class="p-4">
-                  <p class="text-center font-bold text-lg">dr. Susilawati</p>
-                  <p class="text-center text-gray-600">Dokter</p>
+          <div className="w-full md:w-6/12 px-4 mr-auto ml-auto mt-32">
+            <div className="flex justify-center">
+              <div className="max-w-xs rounded-lg overflow-hidden shadow-lg mr-1">
+                <img className="w-full h-64 object-cover p-3" src="/img/Rectangle 280.png" alt="Dr. Susilawati"/>
+                <div className="p-4">
+                  <p className="text-center font-bold text-lg">dr. Susilawati</p>
+                  <p className="text-center text-gray-600">Dokter</p>
                 </div>
               </div>
-              <div class="max-w-xs rounded-lg overflow-hidden shadow-lg ml-1">
-                <img class="w-full h-64 object-cover" src="/img/Rectangle 281.png" alt="Nurul"/>
-                <div class="p-4">
-                  <p class="text-center font-bold text-lg">Nurul ........</p>
-                  <p class="text-center text-gray-600">Asisten Dokter</p>
+              <div className="max-w-xs rounded-lg overflow-hidden shadow-lg ml-1">
+                <img className="w-full h-64 object-cover" src="/img/Rectangle 281.png" alt="Nurul"/>
+                <div className="p-4">
+                  <p className="text-center font-bold text-lg">Nurul ........</p>
+                  <p className="text-center text-gray-600">Asisten Dokter</p>
                 </div>
               </div>
             </div>
@@ -264,12 +268,12 @@ export default function Index() {
 
 
       <section className="py-20 bg-blueGray-600 overflow-hidden">
-        <div className="justify-center text-center flex flex-wrap mt-24">
-          <div className="w-full md:w-6/12 px-12 md:px-4">
-            <h2 className="font-semibold text-4xl text-white">Alamat</h2>
-          </div>
+        <h2 className="font-semibold text-4xl text-white text-center">Alamat</h2>
+        <div className="flex justify-center mt-10 p-8 rounded-lg">
+          <GoogleMapComponent />
         </div>
       </section>
+
       <Footer />
     </>
   );

@@ -9,6 +9,13 @@ import PageChange from "components/PageChange/PageChange.js";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "styles/tailwind.css";
 
+import Script from 'next/script';
+
+<Script
+  src={`https://maps.googleapis.com/maps/api/js?key=AIzaSyDMRzo7nEAn3qnfbYI1VkhlptXTEKAszMU&libraries=places`}
+  strategy="afterInteractive"
+/>
+
 Router.events.on("routeChangeStart", (url) => {
   console.log(`Loading: ${url}`);
   document.body.classList.add("body-page-transition");
