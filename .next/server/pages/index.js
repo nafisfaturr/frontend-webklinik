@@ -229,17 +229,6 @@ module.exports = require("stream");
 "use strict";
 module.exports = require("zlib");
 
-/***/ }),
-
-/***/ "@vercel/postgres":
-/*!***********************************!*\
-  !*** external "@vercel/postgres" ***!
-  \***********************************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = import("@vercel/postgres");;
-
 /***/ })
 
 };
