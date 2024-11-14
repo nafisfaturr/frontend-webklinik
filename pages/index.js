@@ -180,7 +180,7 @@ export default function Index() {
                 </div>
               </div>
               <div className="max-w-xs rounded-lg overflow-hidden shadow-lg ml-1">
-                <img className="w-full h-64 object-cover" src="/img/Rectangle 281.png" alt="Nurul"/>
+                <img className="w-full h-64 object-cover p-3" src="/img/Rectangle 281.png" alt="Nurul"/>
                 <div className="p-4">
                   <p className="text-center font-bold text-lg">Nurul ........</p>
                   <p className="text-center text-gray-600">Asisten Dokter</p>
