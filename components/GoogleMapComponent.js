@@ -1,3 +1,5 @@
+'use client';
+import { Client } from '@vercel/postgres';
 import React, { useEffect } from 'react';
 
 const GoogleMapComponent = () => {
@@ -34,7 +36,7 @@ const GoogleMapComponent = () => {
   }, []);
 
   return (
-    <div id="map" style={{ height: '500px', width: '100%',  borderRadius: '15px' }}></div>
+    <div id="map" style={{ height: '600px', width: '80%',  borderRadius: '15px' }}></div>
   );
 };
 
