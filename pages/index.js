@@ -18,7 +18,7 @@ export default function Index() {
           <div className="w-full md:w-8/12 lg:w-6/12 xl:w-6/12 px-4">
             <div className="pt-32 sm:pt-0">
               <h2 className="font-semibold text-4xl text-blueGray-600">
-                Notus NextJS - A beautiful extension for Tailwind CSS.
+                Praktik Mandiri Dokter Gigi drg. Susilawati
               </h2>
               <p className="mt-4 text-lg leading-relaxed text-blueGray-500">
                 Notus NextJS is Free and Open Source. It does not change any of
@@ -88,7 +88,7 @@ export default function Index() {
 
             <div className="w-full md:w-6/12 px-4">
               <h2 className="font-semibold text-right text-4xl text-blueGray-600">
-                Tentang Kami.
+                Tentang Kami
               </h2>
               <p className="mt-4 text-lg leading-relaxed text-blueGray-500">
                 Notus NextJS is Free and Open Source. It does not change any of
@@ -155,11 +155,12 @@ export default function Index() {
                   src="/img/12.png"
                   className="w-full align-middle rounded-lg absolute shadow-2xl max-w-200-px -left-50-px top-25-px"
                 />
-                <img
-                  alt="..."
-                  src="/img/line-layanan (1).svg"
-                  className="w-full align-middle rounded absolute shadow-lg max-w-580-px -left-20-px top-210-px"
-                />
+                <svg width="683" height="23" viewBox="0 0 683 23" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full align-middle rounded absolute max-w-580-px -left-20-px top-210-px">
+                
+                    <rect width="640" height="23" rx="11.5" fill="#BCD1DA" fill-opacity="0.5"/>
+                    <path d="M683 11.5C683 17.8513 677.851 23 671.5 23C665.149 23 660 17.8513 660 11.5C660 5.14873 665.149 0 671.5 0C677.851 0 683 5.14873 683 11.5Z" fill="#BCD1DA" fill-opacity="0.5"/>
+                </svg>
+
                 <img
                   alt="..."
                   src="/img/Frame 172.png"
@@ -182,7 +183,7 @@ export default function Index() {
               <div className="max-w-xs rounded-lg overflow-hidden shadow-lg ml-1">
                 <img className="w-full h-64 object-cover p-3" src="/img/Rectangle 281.png" alt="Nurul"/>
                 <div className="p-4">
-                  <p className="text-center font-bold text-lg">Nurul ........</p>
+                  <p className="text-center font-bold text-lg">Nurul Derani</p>
                   <p className="text-center text-gray-600">Asisten Dokter</p>
                 </div>
               </div>
