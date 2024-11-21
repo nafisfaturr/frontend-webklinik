@@ -1,1 +1,1 @@
-self.__REACT_LOADABLE_MANIFEST="{\"pages\\\\index.js -> ../components/GoogleMapComponent\":{\"id\":\"pages\\\\index.js -> ../components/GoogleMapComponent\",\"files\":[\"static/chunks/components_GoogleMapComponent_js.js\"]}}"
+self.__REACT_LOADABLE_MANIFEST="{}"

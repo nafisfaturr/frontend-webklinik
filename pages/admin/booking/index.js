@@ -59,17 +59,18 @@ export default function Booking() {
         const date = new Date(isoDate);
         const startTime = new Date(isoStartTime);
         const endTime = new Date(isoEndTime);
-        
-        // Get the day of the week
-        const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-        const dayName = days[date.getUTCDay()];
-
-        // Format date and time
-        const formattedDate = date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-        const formattedStartTime = startTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-        const formattedEndTime = endTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-
-        return `${formattedDate} (${dayName}) - ${formattedStartTime} to ${formattedEndTime}`;
+    
+        // Get the day of the week in Bahasa Indonesia
+        const dayName = new Intl.DateTimeFormat('id-ID', { weekday: 'long' }).format(date);
+    
+        // Format date as DD-MM-YY
+        const formattedDate = date.toISOString().slice(0, 10).split('-').reverse().join('-');
+    
+        // Format start and end times as HH:mm
+        const formattedStartTime = startTime.toISOString().slice(11, 16);
+        const formattedEndTime = endTime.toISOString().slice(11, 16);
+    
+        return `${dayName}, ${formattedDate} - ${formattedStartTime} to ${formattedEndTime}`;
     };
 
     return (

@@ -2,5 +2,12 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/": "pages/index.js"
+  "/api/jadwal": "pages/api/jadwal.js",
+  "/admin/jadwal": "pages/admin/jadwal.js",
+  "/admin/jadwal/[id]": "pages/admin/jadwal/[id].js",
+  "/admin/booking/[id]": "pages/admin/booking/[id].js",
+  "/api/jadwal/show/[id]": "pages/api/jadwal/show/[id].js",
+  "/api/booking/show/[id]": "pages/api/booking/show/[id].js",
+  "/api/pasien": "pages/api/pasien.js",
+  "/api/status": "pages/api/status.js"
 }

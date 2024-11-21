@@ -43,15 +43,23 @@ export default function BookingAdd() {
         const jamMulaiDate = new Date(j.jam_mulai);
         const jamSelesaiDate = new Date(j.jam_selesai);
         const tanggalDate = new Date(j.tanggal);
-        const dayOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-        const timeOptions = { hour: '2-digit', minute: '2-digit', hour12: false };
-
+    
+        // Get day name in Bahasa Indonesia
+        const dayName = new Intl.DateTimeFormat('id-ID', { weekday: 'long' }).format(tanggalDate);
+    
+        // Format date as dd-mm-yy
+        const formattedDate = tanggalDate.toISOString().slice(0, 10).split('-').reverse().join('-');
+    
+        // Format times as hh:mm
+        const formattedJamMulai = jamMulaiDate.toISOString().slice(11, 16);
+        const formattedJamSelesai = jamSelesaiDate.toISOString().slice(11, 16);
+    
         return {
-          ...j,
-          jam_mulai: `${tanggalDate.toLocaleDateString('id-ID', dayOptions)} ${jamMulaiDate.toLocaleTimeString('id-ID', timeOptions)}`,
-          jam_selesai: `${tanggalDate.toLocaleDateString('id-ID', dayOptions)} ${jamSelesaiDate.toLocaleTimeString('id-ID', timeOptions)}`,
+            ...j,
+            jam_mulai: `${dayName}, ${formattedDate} - ${formattedJamMulai}`,
+            jam_selesai: `${dayName}, ${formattedDate} - ${formattedJamSelesai}`,
         };
-      });
+    });
       return formattedJadwal;
     } catch (error) {
       console.error('Gagal mengambil jadwal:', error);

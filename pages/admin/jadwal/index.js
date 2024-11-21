@@ -98,15 +98,16 @@ export default function Jadwal() {
                                 <tbody>
                                     {data.map((jadwal) => (
                                         <tr key={jadwal.id}>
-                                            <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                                {new Date(jadwal.tanggal).toLocaleDateString()}
-                                            </td>
-                                            <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                                {new Date(jadwal.jam_mulai).toLocaleTimeString()}
-                                            </td>
-                                            <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                                {new Date(jadwal.jam_selesai).toLocaleTimeString()}
-                                            </td>
+                                                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                                    {new Intl.DateTimeFormat('id-ID', { weekday: 'long' }).format(new Date(jadwal.tanggal))}, 
+                                                    &nbsp;{new Date(jadwal.tanggal).toISOString().slice(0, 10).split('-').reverse().join('-')}
+                                                </td>
+                                                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                                    {jadwal.jam_mulai.slice(11, 16)}
+                                                </td>
+                                                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                                    {jadwal.jam_selesai.slice(11, 16)}
+                                                </td>
                                             <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 flex space-x-2">
                                                 <a
                                                     href={`/admin/jadwal/${jadwal.id}`}
