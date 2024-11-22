@@ -21,22 +21,13 @@ export default function Index() {
                 Praktik Mandiri Dokter Gigi drg. Susilawati
               </h2>
               <p className="mt-4 text-lg leading-relaxed text-blueGray-500">
-                Notus NextJS is Free and Open Source. It does not change any of
-                the CSS from{" "}
-                <a
-                  href="https://tailwindcss.com/?ref=creativetim"
-                  className="text-blueGray-600"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Tailwind CSS
-                </a>
-                . It features multiple HTML elements and it comes with dynamic
-                components for ReactJS, Vue and Angular.
+                Klinik Gigi drg. Susilawati adalah layanan kesehatan gigi yang terpercaya dan profesional.
+                Klinik ini menyediakan berbagai perawatan gigi,
+                mulai dari pembersihan, penambalan, hingga perawatan estetik.
               </p>
               <div className="mt-12">
                 <a
-                  href="https://www.creative-tim.com/learning-lab/tailwind/nextjs/overview/notus?ref=nnjs-index"
+                  href=""
                   target="_blank"
                   className="get-started text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 bg-blueGray-400 active:bg-blueGray-500 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150"
                 >
@@ -47,7 +38,7 @@ export default function Index() {
           </div>
         </div>
         <img
-          className="absolute top-0 right-0 left-auto bottom-0 pt-16 sm:w-auto w-auto sm:h-full h-full max-h-full overflow-hidden z-0"
+          className="absolute top-0 right-0 left-auto bottom-0 pt-16 sm:w-auto w-auto sm:h-full h-full max-h-full overflow-hidden z-0 hidden lg:block"
           src="/img/Vector 64.png"
           alt="..."
         />
@@ -86,23 +77,17 @@ export default function Index() {
               </div>
             </div>
 
-            <div className="w-full md:w-6/12 px-4">
+            <div className="w-full md:w-6/12 px-4 text-right">
+              <div className="text-blueGray-500 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-white">
+                <img
+                  src="/img/ic_tentang.svg"></img>
+              </div>
               <h2 className="font-semibold text-right text-4xl text-blueGray-600">
                 Tentang Kami
               </h2>
               <p className="mt-4 text-lg leading-relaxed text-blueGray-500">
-                Notus NextJS is Free and Open Source. It does not change any of
-                the CSS from{" "}
-                <a
-                  href="https://tailwindcss.com/?ref=creativetim"
-                  className="text-blueGray-600"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Tailwind CSS
-                </a>
-                . It features multiple HTML elements and it comes with dynamic
-                components for ReactJS, Vue and Angular.
+                Klinik Gigi drg. Susilawati adalah layanan kesehatan modern yang berfokus pada kenyamanan dan kebutuhan pasien.
+                Klinik ini mempertahankan standar tinggi dalam perawatan gigi tanpa mengurangi kehangatan pelayanan.
               </p>
             </div>
           </div>
@@ -113,14 +98,14 @@ export default function Index() {
             <div className="w-full md:w-4/12 px-12 md:px-4 ml-auto mr-auto mt-48">
               <div className="text-blueGray-500 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-white">
                 <img
-                src="/img/ic-about.svg"></img>
+                  src="/img/ic_love.svg"></img>
               </div>
-              <h3 className="text-3xl mb-2 font-semibold leading-normal">
+              <h3 className="text-3xl mb-2 font-semibold leading-normal" id="layanan">
                 Layanan
               </h3>
               <p className="text-lg font-light leading-relaxed mt-4 mb-4 text-blueGray-600">
                 Kami hadir dengan berbagai layanan perawatan gigi yang
-                didukung oleh tenaga profesional terpercaya untuk 
+                didukung oleh tenaga profesional terpercaya untuk
                 mendapatkan senyum yang sehat dan percaya diri.
               </p>
               <a
@@ -156,9 +141,9 @@ export default function Index() {
                   className="w-full align-middle rounded-lg absolute shadow-2xl max-w-200-px -left-50-px top-25-px"
                 />
                 <svg width="683" height="23" viewBox="0 0 683 23" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full align-middle rounded absolute max-w-580-px -left-20-px top-210-px">
-                
-                    <rect width="640" height="23" rx="11.5" fill="#BCD1DA" fill-opacity="0.5"/>
-                    <path d="M683 11.5C683 17.8513 677.851 23 671.5 23C665.149 23 660 17.8513 660 11.5C660 5.14873 665.149 0 671.5 0C677.851 0 683 5.14873 683 11.5Z" fill="#BCD1DA" fill-opacity="0.5"/>
+
+                  <rect width="640" height="23" rx="11.5" fill="#BCD1DA" fill-opacity="0.5" />
+                  <path d="M683 11.5C683 17.8513 677.851 23 671.5 23C665.149 23 660 17.8513 660 11.5C660 5.14873 665.149 0 671.5 0C677.851 0 683 5.14873 683 11.5Z" fill="#BCD1DA" fill-opacity="0.5" />
                 </svg>
 
                 <img
@@ -171,32 +156,32 @@ export default function Index() {
           </div>
 
           <div className="flex flex-wrap items-center pt-32">
-          <div className="w-full md:w-6/12 px-4 mr-auto ml-auto mt-32">
-            <div className="flex justify-center">
-              <div className="max-w-xs rounded-lg overflow-hidden shadow-lg mr-1">
-                <img className="w-full h-64 object-cover p-3" src="/img/Rectangle 280.png" alt="Dr. Susilawati"/>
-                <div className="p-4">
-                  <p className="text-center font-bold text-lg">dr. Susilawati</p>
-                  <p className="text-center text-gray-600">Dokter</p>
+            <div className="w-full md:w-6/12 px-4 mr-auto ml-auto mt-32">
+              <div className="flex justify-center">
+                <div className="max-w-xs rounded-lg overflow-hidden shadow-lg mr-1">
+                  <img className="w-full h-64 object-cover p-3" src="/img/Rectangle 280.png" alt="Dr. Susilawati" />
+                  <div className="p-4">
+                    <p className="text-center font-bold text-lg">dr. Susilawati</p>
+                    <p className="text-center text-gray-600">Dokter</p>
+                  </div>
                 </div>
-              </div>
-              <div className="max-w-xs rounded-lg overflow-hidden shadow-lg ml-1">
-                <img className="w-full h-64 object-cover p-3" src="/img/Rectangle 281.png" alt="Nurul"/>
-                <div className="p-4">
-                  <p className="text-center font-bold text-lg">Nurul Derani</p>
-                  <p className="text-center text-gray-600">Asisten Dokter</p>
+                <div className="max-w-xs rounded-lg overflow-hidden shadow-lg ml-1">
+                  <img className="w-full h-64 object-cover p-3" src="/img/Rectangle 281.png" alt="Nurul" />
+                  <div className="p-4">
+                    <p className="text-center font-bold text-lg">Nurul Derani</p>
+                    <p className="text-center text-gray-600">Asisten Dokter</p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
 
 
             <div className="w-full md:w-4/12 px-12 md:px-4 ml-auto mr-auto mt-48 text-right">
               <div className="text-blueGray-500 text-center inline-flex items-center justify-center w-16 h-16 mb-5 shadow-lg rounded-full bg-white">
-                <img src="/img/ic.svg"/>
+                <img src="/img/ic_tim.svg" />
               </div>
-              <h3 className="text-3xl mb-2 font-semibold leading-normal">
+              <h3 className="text-3xl mb-2 font-semibold leading-normal" id="timMedis">
                 Tim Medis
               </h3>
               <p className="text-lg font-light leading-relaxed mt-4 mb-4 text-blueGray-600">

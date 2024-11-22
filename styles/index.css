@@ -3,3 +3,10 @@
 @tailwind components;
 
 @tailwind utilities;
+
+@media (max-width: 980px) {
+    .hide-on-small {
+      display: none;
+    }
+  }
+  
